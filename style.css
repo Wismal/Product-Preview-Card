@@ -1,0 +1,134 @@
+:root{
+    --DarkCyan: hsl(158, 36%, 37%);
+    --Cream: hsl(30, 38%, 92%);
+
+    --VerydarkBlue: hsl(212, 21%, 14%);
+    --DarkGrayishBlue: hsl(228, 12%, 48%);
+    --White: hsl(0, 0%, 100%);
+}
+
+
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 101vh;
+    background-color: var(--Cream);
+    padding: 2rem 1rem;
+    font-size: 14px;
+
+}
+
+.container{
+    background-color: var(--White);
+    border-radius: 1rem;
+}
+
+
+.image .img-mobile{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.image .img-desktop{
+    display:none;
+}
+
+
+.text{
+    font-family: 'Hanken Grotesk', sans-serif;
+    font-weight: 500;
+    color: var(--DarkGrayishBlue);
+    display:grid;
+    gap: 1rem; 
+    padding: 1rem;
+}
+
+.text .header{
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+}
+
+
+.text h1{
+    font-family: "Fraunces", serif;
+    color: black;
+    font-weight: 700;
+    margin-right: 1rem;
+}
+
+
+.text .main-text{
+    line-height: 1.5;
+    margin-right: 1rem;
+}
+
+.text .price .number{
+    font-family: "Fraunces", serif;
+    color: var(--DarkCyan);
+    font-weight: 700;
+    font-size: 1.75rem;
+}
+
+.text .price{
+    display: flex;
+    align-items:center;
+    gap: 2rem;
+}
+
+
+button{
+    border-radius: .5rem;
+    border:none;
+    padding: 1rem;
+    background-color: var(--DarkCyan);
+    color: var(--White);
+    cursor: pointer;
+    display:flex;
+    place-content: center;
+    justify-content: center;
+    gap: 1rem;
+    font-weight: 700;
+}
+
+button:hover{
+    background-color: var(--VerydarkBlue);
+}
+
+
+@media (width >500px){
+    .container{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 35rem; 
+        margin-inline: 1rem; 
+    }
+    
+    .image .img-mobile{
+        display:none
+    }
+
+    .image .img-desktop{
+        display: block;
+        object-fit: contain;
+        max-width: 18rem;
+        border-radius: 1rem 0 0 1rem;
+    }
+
+    .text{
+        display:grid;
+        gap: 1.5rem;
+        padding: 1.5rem 1.5rem;
+        
+    }
+}
